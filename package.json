@@ -1,0 +1,20 @@
+{
+  "name": "gp-landscaping",
+  "version": "1.0.0",
+  "description": "App to easily control landscaping projects.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GP-Landscaping/GP-Landscaping.git"
+  },
+  "author": "ZacB,BrianW,DerekG,JeredT",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GP-Landscaping/GP-Landscaping/issues"
+  },
+  "homepage": "https://github.com/GP-Landscaping/GP-Landscaping#readme"
+}
