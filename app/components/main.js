@@ -9,41 +9,46 @@ var helpers = require("./utils/helpers");
 
 var Main = React.createClass({
 
+
+
   // Here we set a generic state associated with the number of clicks
   // Note how we added in this history state variable
-  getInitialState: function() {
-    return { name: ""};
-  },
+//   getInitialState: function() {
+//     return { name: ""};
+//   },
 
 
-componentDidUpdate: function(prevProps, prevState) {
-    // If we have a new search term, run a new search
-    if (prevState.name !== this.state.name) {
-      console.log("UPDATED");
+// // constructor(props) {
+   
+// //     this.state = {name: ''};
 
-            }
-        // This code is necessary to bind the keyword "this" when we say this.setState
-        // to actually mean the component itself and not the runQuery function.
-      }.bind(this));
+// //     this.handleChange = this.handleChange.bind(this);
+// //     this.handleSubmit = this.handleSubmit.bind(this);
+// //   }
+
+//  handleChange(event) {
+//     this.setState({name: event.target.value});
+//   },
+
+
+
     
-    setName: function(name) {
-    this.setState({ name: name });
-  },
 
+  
       render: function() {
     return (
       <div className="container">
-        <div className="row">
+         <div className="row">
           <div className="jumbotron">
-            <h2 className="text-center">Address Finder!</h2>
+            <h2 className="text-center">Welcome to GP-Landscaping</h2>
             <p className="text-center">
-              <em>Enter a landmark to search for its exact address (ex: "Eiffel Tower").</em>
+              <em>Please fill out the form below to add a new Client/Job!!!!!!!</em>
             </p>
           </div>
 
           <div className="col-md-6">
 
-            <Form setName={this.setName} />
+            <Form postClient={this.postClient} />
 
           </div>
 

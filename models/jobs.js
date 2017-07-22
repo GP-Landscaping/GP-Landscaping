@@ -18,7 +18,7 @@ var ClientsSchema = new Schema({
   //   type: String
   // }
   
-});
+// });
 });
 
 var Clients = mongoose.model("Clients", ClientsSchema);

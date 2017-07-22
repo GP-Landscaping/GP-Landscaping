@@ -3,9 +3,11 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
+var jade = require("jade")
+var superagent = require("superagent")
 
 // Require History Schema
-var History = require("./models/Jobs");
+var Clients = require("./models/Clients");
 
 // Create Instance of Express
 var app = express();
@@ -45,28 +47,33 @@ app.get("/", function(req, res) {
 // This is the route we will send GET requests to retrieve our most recent search data.
 // We will call this route the moment our page gets rendered
 
-app.post("/api", function(req, res) {
-  console.log("BODY: " + req.body.name);
+app.post('/api', function(req, res) {
+  console.log("hitting endpoint");
+  res.send({ "respoonse clients": "wjnsdfs" });
+  // var doc = new Clients({ name: req.body.name });
+  // doc.save()
+  });
+  
 
   // Here we'll save the location based on the JSON input.
-  // We'll use Date.now() to always get the current date time
-  Clients.create({
-    name: req.body.name,
-    // date: Date.now(),
-    // address: req.body.address,
-    // // jobOpen: req.body.jobOpen,
-    // notes: req.body.notes
+  
+//   Clients.create({
+//     name: req.body.name,
+//     // date: Date.now(),
+//     // address: req.body.address,
+//     // // jobOpen: req.body.jobOpen,
+//     // notes: req.body.notes
 
 
-  }, function(err) {
-    if (err) {
-      console.log(err);
-    }
-    else {
-      res.send("Job Saved");
-    }
-  });
-});
+//   }, function(err) {
+//     if (err) {
+//       console.log(err);
+//     }
+//     else {
+//       res.send("Job Saved");
+//     }
+//   });
+// });
 
 // -------------------------------------------------
 
