@@ -3,8 +3,9 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
-var jade = require("jade")
-var superagent = require("superagent")
+var jade = require("jade");
+var superagent = require("superagent");
+var clientsController = require('./controllers/clients');
 
 // Require History Schema
 var Clients = require("./models/Clients");
@@ -48,8 +49,10 @@ app.get("/", function(req, res) {
 // We will call this route the moment our page gets rendered
 
 app.post('/api', function(req, res) {
-  console.log("hitting endpoint");
-  res.send({ "respoonse clients": "wjnsdfs" });
+  clientsController.save(req.body, function(data) {
+
+    res.json(data);
+  });
   // var doc = new Clients({ name: req.body.name });
   // doc.save()
   });
