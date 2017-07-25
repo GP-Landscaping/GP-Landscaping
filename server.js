@@ -6,9 +6,11 @@ var mongoose = require("mongoose");
 var jade = require("jade");
 var superagent = require("superagent");
 var clientsController = require('./controllers/clients');
+var jobsController = require('./controllers/jobs')
 
 // Require History Schema
 var Clients = require("./models/Clients");
+var Jobs = require("./models/Jobs")
 
 // Create Instance of Express
 var app = express();
@@ -48,7 +50,7 @@ app.get("/", function(req, res) {
 // This is the route we will send GET requests to retrieve our most recent search data.
 // We will call this route the moment our page gets rendered
 
-app.post('/api', function(req, res) {
+app.post('/api/clients', function(req, res) {
   clientsController.save(req.body, function(data) {
 
     res.json(data);
@@ -57,6 +59,12 @@ app.post('/api', function(req, res) {
   // doc.save()
   });
   
+app.post('/api/jobs', function(req, res) {
+  jobsController.save(req.body, function(data) {
+
+    res.json(data);
+  });
+   });
 
   // Here we'll save the location based on the JSON input.
   

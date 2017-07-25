@@ -1,17 +1,17 @@
-
 var React = require("react");
 var axios = require("axios");
 
 // Form is the main component. It includes the banner and form element
-var Form = React.createClass({
+var JobForms = React.createClass({
 
 getInitialState: function() {
   return {
-    name: '',
-    email: '',
-    address: '',
-    city:'',
-    state: 'Alabama',
+      date: '',
+      type: '',
+      materials: '',
+      bid: '',
+      jobOpen: '',
+      notes: ''
 
 
   }
@@ -21,12 +21,13 @@ getInitialState: function() {
  handleSubmit: function(e) {
             e.preventDefault();
             console.log("submit");           
-            axios.post("/api/clients", {
-                clientName: this.name.value,
-                clientEmail: this.email.value,
-                clientAddress: this.address.value,
-                clientCity: this.city.value,
-                state: this.state.value,
+            axios.post("/api/jobs", {
+                jobDate: this.date.value,
+                jobType: this.type.value,
+                jobMaterials: this.materials.value,
+                jobBid: this.bid.value,
+                jobOpen: this.jobOpen.value,
+                jobNotes: this.notes.value,
 
 
                 // userEmail: this.email.value,
@@ -47,67 +48,19 @@ getInitialState: function() {
                               <div className="col-xs-12 col-sm-4 register">
                                 <h1>Register</h1>
                                 <form onSubmit={this.handleSubmit}>
-                                    <label htmlFor="firstName">Name</label>
-                                    <input type="text" name="name" placeholder="Full Name" ref={(input) => { this.name = input; }}/>
-                                    <label htmlFor="email">Email</label>
-                                    <input type="text" name="email" placeholder="email" ref={(input) => { this.email = input; }}/>
-                                    <label htmlFor="address">Address</label>
-                                    <input type="text" name="address" placeholder="Address" ref={(input) => { this.address= input; }}/>
-                                    <label htmlFor="city">City</label>
-                                    <input type="text" name="city" placeholder="City" ref={(input) => { this.city= input; }}/>
-                                    <select value={this.state}>
-    <option value="AL">Alabama</option>
-    <option value="AK">Alaska</option>
-    <option value="AZ">Arizona</option>
-    <option value="AR">Arkansas</option>
-    <option value="CA">California</option>
-    <option value="CO">Colorado</option>
-    <option value="CT">Connecticut</option>
-    <option value="DE">Delaware</option>
-    <option value="DC">District Of Columbia</option>
-    <option value="FL">Florida</option>
-    <option value="GA">Georgia</option>
-    <option value="HI">Hawaii</option>
-    <option value="ID">Idaho</option>
-    <option value="IL">Illinois</option>
-    <option value="IN">Indiana</option>
-    <option value="IA">Iowa</option>
-    <option value="KS">Kansas</option>
-    <option value="KY">Kentucky</option>
-    <option value="LA">Louisiana</option>
-    <option value="ME">Maine</option>
-    <option value="MD">Maryland</option>
-    <option value="MA">Massachusetts</option>
-    <option value="MI">Michigan</option>
-    <option value="MN">Minnesota</option>
-    <option value="MS">Mississippi</option>
-    <option value="MO">Missouri</option>
-    <option value="MT">Montana</option>
-    <option value="NE">Nebraska</option>
-    <option value="NV">Nevada</option>
-    <option value="NH">New Hampshire</option>
-    <option value="NJ">New Jersey</option>
-    <option value="NM">New Mexico</option>
-    <option value="NY">New York</option>
-    <option value="NC">North Carolina</option>
-    <option value="ND">North Dakota</option>
-    <option value="OH">Ohio</option>
-    <option value="OK">Oklahoma</option>
-    <option value="OR">Oregon</option>
-    <option value="PA">Pennsylvania</option>
-    <option value="RI">Rhode Island</option>
-    <option value="SC">South Carolina</option>
-    <option value="SD">South Dakota</option>
-    <option value="TN">Tennessee</option>
-    <option value="TX">Texas</option>
-    <option value="UT">Utah</option>
-    <option value="VT">Vermont</option>
-    <option value="VA">Virginia</option>
-    <option value="WA">Washington</option>
-    <option value="WV">West Virginia</option>
-    <option value="WI">Wisconsin</option>
-    <option value="WY">Wyoming</option>
-                                    </select>
+                                    <label htmlFor="date">Date</label>
+                                    <input type="text" name="date" placeholder="Date" ref={(input) => { this.date = input; }}/>
+                                    <label htmlFor="Type">Type</label>
+                                    <input type="text" name="type" placeholder="type" ref={(input) => { this.type = input; }}/>
+                                    <label htmlFor="materials">Materials</label>
+                                    <input type="text" name="address" placeholder="Address" ref={(input) => { this.materials= input; }}/>
+                                    <label htmlFor="city">Bid Amount:</label>
+                                    <input type="text" name="bid" placeholder="$bid" ref={(input) => { this.bid= input; }}/>
+                                    <label htmlFor="jobOpen">jobOpen:</label>
+                                    <input type="text" name="bid" placeholder="jobOpen" ref={(input) => { this.jobOpen= input; }}/>
+                                    <label htmlFor="jobOpeny">Notes:</label>
+                                    <textArea type="text" name="Notes" placeholder="Job Notes" ref={(input) => { this.notes= input; }}/>
+                                    
                                     <input className="button gold" type="submit" value="Register"/>
                                 </form>
                             </div>
@@ -201,4 +154,4 @@ getInitialState: function() {
 // });
 
 // Export the component back for use in other files
-module.exports = Form;
+module.exports = JobForms;

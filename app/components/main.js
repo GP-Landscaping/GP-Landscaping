@@ -2,6 +2,7 @@
 var React = require("react");
 
 var Form = require("./children/Form");
+var JobForms = require("./children/JobForms")
 
 
 var helpers = require("./utils/helpers");
@@ -46,12 +47,13 @@ var Main = React.createClass({
             </p>
           </div>
 
-          <div className="col-md-6">
+         
 
-            <Form postClient={this.postClient} />
+<div className="col-md-6">
+
+            <JobForms/>
 
           </div>
-
           
         </div>
       </div>
