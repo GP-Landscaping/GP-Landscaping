@@ -9,7 +9,8 @@ module.exports = {
       email: data._id,
       address: data._id,
       city: data._id,
-      state: data._id
+      zip: data._id
+      // state: data._id
     }, cb);
   },
   // Save a note
@@ -22,7 +23,8 @@ module.exports = {
       email: data.clientEmail,
       address: data.clientAddress,
       city: data.clientCity,
-      state: data.clientState
+      zip: data.clientZip
+      // state: data.clientState
 
           };
 

@@ -2,11 +2,12 @@
 var React = require("react");
 
 var Form = require("./children/Form");
-var JobForms = require("./children/JobForms")
+var JobForms = require("./children/JobForms");
+
 
 
 var helpers = require("./utils/helpers");
-
+import { Link } from "react-router-dom"
 
 var Main = React.createClass({
 
@@ -48,12 +49,19 @@ var Main = React.createClass({
           </div>
 
          
+         
 
-<div className="col-md-6">
 
-            <JobForms/>
+          <div className="col-md-6">
 
+           
+            {this.props.children}
+            <Link to ="/clients">link</Link>
           </div>
+
+
+
+
           
         </div>
       </div>
