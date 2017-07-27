@@ -55,7 +55,7 @@ var Main = React.createClass({
           <div className="col-md-6">
 
            
-            {this.props.children}
+           <Form/>
             <Link to ="/clients">link</Link>
           </div>
 

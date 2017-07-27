@@ -1,6 +1,10 @@
 
 var React = require("react");
 var axios = require("axios");
+// var Dropdown = require('react-simple-dropdown');
+// var DropdownTrigger = Dropdown.DropdownTrigger;
+// var DropdownContent = Dropdown.DropdownContent;
+
 // var Link = require("react-router").Link;
 
 
@@ -62,6 +66,7 @@ getInitialState: function() {
                                     <input type="text" name="city" placeholder="City" ref={(input) => { this.city= input; }}/>
                                     <label htmlFor="city">Zip</label>
                                     <input type="text" name="zip" placeholder="Zip Code" ref={(input) => { this.zip= input; }}/>
+                                     
                                     
                                     <input className="button gold" type="submit" value="Register"/>
                                 </form>
