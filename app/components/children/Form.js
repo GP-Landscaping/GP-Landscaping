@@ -67,7 +67,7 @@ getInitialState: function() {
                                     <label htmlFor="city">Zip</label>
                                     <input type="text" name="zip" placeholder="Zip Code" ref={(input) => { this.zip= input; }}/>
                                      
-                                    
+                  
                                     <input className="button gold" type="submit" value="Register"/>
                                 </form>
                             </div>

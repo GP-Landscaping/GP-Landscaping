@@ -3,40 +3,16 @@ var React = require("react");
 
 var Form = require("./children/Form");
 var JobForms = require("./children/JobForms");
-
+var Link = require("react-router").Link;
 
 
 var helpers = require("./utils/helpers");
-import { Link } from "react-router-dom"
+
 
 var Main = React.createClass({
 
 
-
-  // Here we set a generic state associated with the number of clicks
-  // Note how we added in this history state variable
-//   getInitialState: function() {
-//     return { name: ""};
-//   },
-
-
-// // constructor(props) {
-   
-// //     this.state = {name: ''};
-
-// //     this.handleChange = this.handleChange.bind(this);
-// //     this.handleSubmit = this.handleSubmit.bind(this);
-// //   }
-
-//  handleChange(event) {
-//     this.setState({name: event.target.value});
-//   },
-
-
-
-    
-
-  
+ 
       render: function() {
     return (
       <div className="container">
@@ -54,9 +30,9 @@ var Main = React.createClass({
 
           <div className="col-md-6">
 
+           {this.props.children}
            
-           <Form/>
-            <Link to ="/clients">link</Link>
+            <Link to ="clients"><button class= "btn btn-success">New Client</button></Link>
           </div>
 
 
