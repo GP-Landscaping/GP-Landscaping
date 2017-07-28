@@ -32,7 +32,7 @@ var Main = React.createClass({
 
            {this.props.children}
            
-            <Link to ="clients"><button class= "btn btn-success">New Client</button></Link>
+            <Link to ="clients"><button className= "btn btn-success">New Client</button></Link>
           </div>
 
 

@@ -5,7 +5,7 @@ var axios = require("axios");
 // var DropdownTrigger = Dropdown.DropdownTrigger;
 // var DropdownContent = Dropdown.DropdownContent;
 
-// var Link = require("react-router").Link;
+var Link = require("react-router").Link;
 
 
 // Form is the main component. It includes the banner and form element
@@ -26,7 +26,7 @@ getInitialState: function() {
 
 
  handleSubmit: function(e) {
-            e.preventDefault();
+            
             console.log("submit");           
             axios.post("/api/clients", {
                 clientName: this.name.value,
@@ -50,8 +50,12 @@ getInitialState: function() {
         render: function() {
           console.log("check")
             return(
+
+                <div className="container">
+         <div className="row">
+          
                 <div>
-                    
+                        {this.props.children}
 
                               <div className="col-xs-12 col-sm-4 register">
                                 <h1>Register</h1>
@@ -68,11 +72,12 @@ getInitialState: function() {
                                     <input type="text" name="zip" placeholder="Zip Code" ref={(input) => { this.zip= input; }}/>
                                      
                   
-                                    <input className="button gold" type="submit" value="Register"/>
+                                   <Link to ="jobs"><button className= "btn btn-success">Add New Job</button></Link>
                                 </form>
                             </div>
                         </div>
-                 
+                 </div>
+                 </div>
             );
         }
 

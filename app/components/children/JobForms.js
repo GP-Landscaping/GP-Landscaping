@@ -44,6 +44,15 @@ getInitialState: function() {
         render: function() {
           console.log("check")
             return(
+
+                <div className="container">
+         <div className="row">
+          <div className="panel">
+            <h2 className="text-center"></h2>
+            
+          </div>
+                <div>
+
                 <div>
                     
 
@@ -63,9 +72,12 @@ getInitialState: function() {
                                     <label htmlFor="jobOpeny">Notes:</label>
                                     <textArea type="text" name="Notes" placeholder="Job Notes" ref={(input) => { this.notes= input; }}/>
                                     
-                                    <input className="button gold" type="submit" value="Register"/>
+                                    
                                 </form>
                             </div>
+                        </div>
+                        </div>
+                        </div>
                         </div>
                  
             );
