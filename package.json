@@ -20,6 +20,7 @@
     "morgan": "^1.7.0",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
+    "react-sticky-header": "^0.1.8",
     "superagent": "^3.5.2"
   },
   "devDependencies": {

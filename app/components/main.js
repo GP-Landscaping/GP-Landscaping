@@ -6,6 +6,7 @@ var JobForms = require("./children/JobForms")
 
 
 var helpers = require("./utils/helpers");
+var myHeader = require("./children/myHeader.jsx");
 
 
 var Main = React.createClass({
@@ -47,7 +48,7 @@ var Main = React.createClass({
             </p>
           </div>
 
-         
+         <myHeader/>
 
 <div className="col-md-6">
 
@@ -63,3 +64,6 @@ var Main = React.createClass({
 
 // Export the component back for use in other files
 module.exports = Main;
+
+
+
