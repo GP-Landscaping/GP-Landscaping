@@ -1,12 +1,11 @@
 // Include React
-var React = require("react");
+import React from "react";
+import Form from "./children/Form";
+import JobForms from "./children/JobForms";
+import Table from "./children/Table"
+import { Route, Link} from "react-router";
 
-var Form = require("./children/Form");
-var JobForms = require("./children/JobForms");
-var Link = require("react-router").Link;
 
-
-var helpers = require("./utils/helpers");
 
 
 var Main = React.createClass({
