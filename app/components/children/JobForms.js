@@ -1,6 +1,8 @@
 var React = require("react");
 var axios = require("axios");
 
+
+var Link = require("react-router").Link;
 // Form is the main component. It includes the banner and form element
 var JobForms = React.createClass({
 
@@ -19,7 +21,7 @@ getInitialState: function() {
 
 
  handleSubmit: function(e) {
-            e.preventDefault();
+            // e.preventDefault();
             console.log("submit");           
             axios.post("/api/jobs", {
                 jobDate: this.date.value,
@@ -42,6 +44,15 @@ getInitialState: function() {
         render: function() {
           console.log("check")
             return(
+
+                <div className="container">
+         <div className="row">
+          <div className="panel">
+            <h2 className="text-center"> HEllo</h2>
+            
+          </div>
+                <div>
+
                 <div>
                     
 
@@ -61,9 +72,12 @@ getInitialState: function() {
                                     <label htmlFor="jobOpeny">Notes:</label>
                                     <textArea type="text" name="Notes" placeholder="Job Notes" ref={(input) => { this.notes= input; }}/>
                                     
-                                    <input className="button gold" type="submit" value="Register"/>
+                                    <Link to ="Table"><button className= "btn btn-success">Continue</button></Link>
                                 </form>
                             </div>
+                        </div>
+                        </div>
+                        </div>
                         </div>
                  
             );

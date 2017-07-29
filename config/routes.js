@@ -1,6 +1,5 @@
-// Inclue the React library
 var React = require("react");
-var ReactDOM = require("react-dom");
+
 // Include the react-router module
 var router = require("react-router");
 
@@ -13,28 +12,25 @@ var IndexRoute = router.IndexRoute;
 // Include the Router component
 var Router = router.Router;
 
-// Include the browserHistory prop to configure client side routing
-// https://github.com/ReactTraining/react-router/blob/master/docs/guides/Histories.md#browserhistory
 var browserHistory = router.browserHistory;
 
-// Reference the high-level components
-var Main = require("./components/Main");
-var Form = require("./components/children/Form");
-var JobForms = require("./components/children/JobForms");
-var Table = require("./components/children/Table");
+var Form = require("./components/children/Form")
+var JobForms = require("./components/children/JobForms")
+var Table = require(".components/children/Table")
 
-
-// This code here allows us to render our main component (in this case Main)
-ReactDOM.render(<Router history={browserHistory}>
-    <Route path="/" component={Main}>
+module.exports = (
+  // High level component is the Router component.
+  <Router history={browserHistory}>
+    <Route path="/" component={}>
 
       {/* If user selects Search or Saved show the appropriate component */}
       <Route path="Clients" component={Form} />
       <Route path="Jobs" component={JobForms} />
       <Route path="Table" component={Table} />
+
       {/* If user selects any other path... we get the Home Route */}
       <IndexRoute component={Main} />
 
     </Route>
-  </Router>, document.getElementById('app'));
-	
+  </Router>
+);
