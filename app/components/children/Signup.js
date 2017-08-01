@@ -6,7 +6,7 @@ var Signup = React.createClass({
 render: function() {
           console.log("check")
             return(
-
+            <div>
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                 <div class="navbar-header">
@@ -36,7 +36,7 @@ render: function() {
             </div>
          </div>
     </div>
-
+</div> 
            );
         }
 
