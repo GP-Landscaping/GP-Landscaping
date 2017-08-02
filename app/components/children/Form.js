@@ -6,7 +6,7 @@ var axios = require("axios");
 // var DropdownContent = Dropdown.DropdownContent;
 
 var Link = require("react-router").Link;
-import style from "../../../public/assets/styles/"
+import style from "../../../public/assets/styles/";
 
 // Form is the main component. It includes the banner and form element
 var Form = React.createClass({

@@ -2,7 +2,9 @@
 import React from "react";
 import Form from "./children/Form";
 import JobForms from "./children/JobForms";
-import Table from "./children/Table"
+import Table from "./children/Table";
+import Login from "./children/Login";
+// import Signup from "./children/Signup";
 import { Route, Link} from "react-router";
 var Header = require('./parts/header.js');
 
