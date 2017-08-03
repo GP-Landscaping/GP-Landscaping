@@ -1,4 +1,4 @@
-var Jobs = require("../models/Jobs");
+var Jobs = require("../models/jobs");
 
 
 module.exports = {
@@ -17,7 +17,7 @@ module.exports = {
 
     }, cb);
   },
-  // Save a note
+  // Save 
   // Export this function as "save" (data = note info, cb = callback)
   save: function(data, cb) {
 

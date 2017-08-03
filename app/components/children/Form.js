@@ -76,14 +76,15 @@ onChange: function(e)
 
                 
           
-                <div>
-                        {this.props.children}
+                
 
                               <div className="col-xs-12 col-sm-4 register">
                                 <h1>Register</h1>
                                 <form onSubmit={this.handleSubmit}>
+                                   <div class="form-group">
                                     <label htmlFor="firstName">Name</label>
                                     <input type="text" name="name" placeholder="Full Name" ref={(input) => { this.name = input; }}/>
+                                    </div>
                                     <label htmlFor="email">Email</label>
                                     <input type="text" name="email" placeholder="email" ref={(input) => { this.email = input; }}/>
                                     <label htmlFor="address">Address</label>
@@ -153,7 +154,7 @@ onChange: function(e)
                                    <button className= "btn btn-success" >Verify Info</button>
                                 </form>
                             </div>
-                        </div>
+                       
                  
             );
         }

@@ -43,6 +43,8 @@ ReactDOM.render(<Router history={browserHistory}>
      <Route path="Clients" component={Form} />
      <Route path="Billed" component={Billed} />
      <Route path="Confirm" component={Confirm} />
+       <Route path="Main" component={Main} />
+
      
      
       <Route path="Jobs" component={JobForms} />

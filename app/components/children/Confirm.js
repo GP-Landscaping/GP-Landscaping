@@ -72,18 +72,18 @@ render: function() {
                 </h1>
               </div>
               <div className="panel-body">
-              <h2><strong>Client: </strong> {jobDate}</h2>
+              <h2><strong>Employees (#): </strong> {jobDate}</h2>
               <hr></hr>
-              <h2><strong>Email: </strong> {jobEnd}</h2>
+              <h2><strong>Est. Labor (Hrs.): </strong> {jobLabor}</h2>
               <hr></hr>
-              <h2><strong>Address: </strong> {jobType}</h2>
+              <h2><strong>Comm. Time (Min.): </strong> {jobCommute}</h2>
               <hr></hr>
-              <h2><strong>City: </strong> {jobNotes}</h2>
+              <h2><strong>Materials: </strong> {jobMaterials}</h2>
               <hr></hr>
-              <h2><strong>Zip: </strong> {jobEmployee}</h2>
+              <h2><strong>Est Cost ($):</strong> {jobEmployee}</h2>
               <hr></hr>
-              <h2><strong>State: </strong> {jobLabor}</h2>
-              <hr></hr>
+              
+              
 
                 {/* Note how we associate the text-box inputs with the state values */}
                 
