@@ -3,24 +3,40 @@ var Schema = mongoose.Schema;
 
 var JobsSchema = new Schema({
    date: {
-    type: String
+    type: Date
+  },
+  jobEnd: {
+    type: Date
   },
     type: {
   	type: String
   }, 
-  materials: {
-    type: String
-  },
-  bid: {
-    type: String
-  },
-   jobOpen: {
-    type: String
-  }, 
+  
   notes: {
     type: String
+  },
+
+  employee: {
+    type: Number
+  },
+
+  labor: {
+    type: Number
+
+  },
+  commute: {
+    type: Number
+
+  },
+  materials: {
+    type: String
+
+  },
+  cost: {
+    type: Number
   }
   
+
 
 });
 

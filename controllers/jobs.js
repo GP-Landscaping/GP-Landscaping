@@ -6,11 +6,15 @@ module.exports = {
     // Find all notes with the headline id from the article we passed
     Jobs.find({
       date: data._id,
+      jobEnd: data.id,
       type: data._id,
+      notes: data._id,
+      employee: data._id,
+      labor: data._id,
+      commute: data._id,
       materials: data._id,
-      jobOpen: data._id,
-      bid: data._id,
-      notes: data._id
+      cost: data._id
+
     }, cb);
   },
   // Save a note
@@ -19,12 +23,16 @@ module.exports = {
 
     // Make a newNote with the note model, saving the apropos info
     var newJobs = {
-       date: data.jobDate,
+      date: data.jobDate,
+      jobEnd: data.jobEnd,
       type: data.jobType,
+      notes: data.jobNotes,
+      employee: data.jobEmployee,
+      labor: data.jobLabor,
+      commute: data.jobCommute,
       materials: data.jobMaterials,
-      bid: data.jobBid,
-      jobOpen: data.jobOpen,
-      notes: data.jobNotes
+      cost: data.jobCost
+
 
           };
 

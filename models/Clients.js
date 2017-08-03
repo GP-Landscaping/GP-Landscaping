@@ -20,9 +20,9 @@ var ClientsSchema = new Schema({
   zip: {
     type: Number,
   },
-  // state: {
-  //             type: String,
-  //         },
+  state: {
+              type: String,
+          },
   // createdAt: {
   //   type: Date,
   //   default: Date.now

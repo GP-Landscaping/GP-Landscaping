@@ -1,7 +1,11 @@
 var React = require("react");
 var axios = require("axios");
+var Link = require("react-router").Link;
 
 var Login = React.createClass({
+
+
+
 
 render: function() {
           console.log("check")
@@ -27,14 +31,16 @@ render: function() {
                             <label for="exampleInputPassword1">Password</label>
                             <input type="password" className="form-control" id="password-input" placeholder="Password"/>
                         </div>
-                        <button type="submit" className="btn btn-default">Login</button>
+                        
+                       <Link to ="Main"> <button type="submit" className="btn btn-default">Login</button></Link>
                         </form>
                         <br />
-                        <p>Or sign up <a href="/">here</a></p>
+                        <p><strong>New User? Please Sign Up</strong></p> <Link to ="Signup"><button className= "btn btn-success">Sign Up</button></Link>
+                  </div>
                     </div>
                     </div>
                 </div>
-            </div>
+            
            );
         }
 

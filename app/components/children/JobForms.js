@@ -5,14 +5,17 @@ var axios = require("axios");
 var Link = require("react-router").Link;
 // Form is the main component. It includes the banner and form element
 var JobForms = React.createClass({
+   contextTypes: {
+         router: React.PropTypes.func
+       },
 
 getInitialState: function() {
   return {
       date: '',
+      jobEnd: '',
       type: '',
-      materials: '',
-      bid: '',
-      jobOpen: '',
+
+      
       notes: ''
 
 
@@ -21,64 +24,61 @@ getInitialState: function() {
 
 
  handleSubmit: function(e) {
-            // e.preventDefault();
-            console.log("submit");           
-            axios.post("/api/jobs", {
-                jobDate: this.date.value,
-                jobType: this.type.value,
-                jobMaterials: this.materials.value,
-                jobBid: this.bid.value,
-                jobOpen: this.jobOpen.value,
-                jobNotes: this.notes.value,
+   localStorage.setItem("jobDate", this.date.value);
+            localStorage.setItem("jobEnd", this.jobEnd.value);
+            localStorage.setItem("jobType", this.type.value);
+            localStorage.setItem("jobNotes", this.notes.value);
+           
+
+            this.context.router.push("/billed");
+                      
+            // axios.post("/api/jobs", {
+            //     jobDate: this.date.value,
+            //     jobEnd: this.jobEnd.value,
+            //     jobType: this.type.value,
+            //     jobNotes: this.notes.value,
 
 
-                // userEmail: this.email.value,
-                // userPassword: this.password1.value
-            }).then(function(response) {            
-                console.log(response);
-            }).catch(function (error) {
-                console.log(error);
-            });
+            //     // userEmail: this.email.value,
+            //     // userPassword: this.password1.value
+            // }).then(function(response) {            
+            //     console.log(response);
+            // }).catch(function (error) {
+            //     console.log(error);
+            // });
         },
 
         render: function() {
           console.log("check")
             return(
 
-                <div className="container">
+       <div className="container">
          <div className="row">
-          <div className="panel">
-            <h2 className="text-center"> HEllo</h2>
-            
-          </div>
-                <div>
+          
+                        <div>
 
-                <div>
+                            <div>
                     
 
                               <div className="col-xs-12 col-sm-4 register">
                                 <h1>Register</h1>
                                 <form onSubmit={this.handleSubmit}>
-                                    <label htmlFor="date">Date</label>
-                                    <input type="text" name="date" placeholder="Date" ref={(input) => { this.date = input; }}/>
-                                    <label htmlFor="Type">Type</label>
+                                    <label htmlFor="Type">Start Date: </label>
+                                    <input type="text" name="date" placeholder="XX/XX/XXXX" ref={(input) => { this.date = input; }}/>
+                                    <label htmlFor="Type">End Date: </label>
+                                    <input type="text" name="date" placeholder="XX/XX/XXXX" ref={(input) => { this.jobEnd = input; }}/>
+                                    <label htmlFor="Type">Job Type: </label>
                                     <input type="text" name="type" placeholder="type" ref={(input) => { this.type = input; }}/>
-                                    <label htmlFor="materials">Materials</label>
-                                    <input type="text" name="address" placeholder="Address" ref={(input) => { this.materials= input; }}/>
-                                    <label htmlFor="city">Bid Amount:</label>
-                                    <input type="text" name="bid" placeholder="$bid" ref={(input) => { this.bid= input; }}/>
-                                    <label htmlFor="jobOpen">jobOpen:</label>
-                                    <input type="text" name="bid" placeholder="jobOpen" ref={(input) => { this.jobOpen= input; }}/>
-                                    <label htmlFor="jobOpeny">Notes:</label>
+                                    <label htmlFor="Notes">Notes:</label>
                                     <textArea type="text" name="Notes" placeholder="Job Notes" ref={(input) => { this.notes= input; }}/>
                                     
-                                    <Link to ="Table"><button className= "btn btn-success">Continue</button></Link>
+                                    <button className= "btn btn-success">Create Bid!</button>
                                 </form>
                             </div>
-                        </div>
-                        </div>
-                        </div>
-                        </div>
+                       </div>
+                  </div>
+               </div>
+          </div>
                  
             );
         }

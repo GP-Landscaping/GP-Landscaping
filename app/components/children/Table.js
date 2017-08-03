@@ -10,13 +10,13 @@ var Link = require("react-router").Link;
 // Form is the main component. It includes the banner and form element
 var Table = React.createClass({
 
-	handleSubmit: function(e) {console.log("table")
-	.then(function(response) {            
-                console.log(response);
-            }).catch(function (error) {
-                console.log(error);
-            });
-        },
+	// handleSubmit: function(e) {console.log("table")
+	// .then(function(response) {            
+ //                console.log(response);
+ //            }).catch(function (error) {
+ //                console.log(error);
+ //            });
+ //        },
 
 	render: function() {
         
@@ -29,17 +29,43 @@ var Table = React.createClass({
                 <div className="panel panel-primary" className="panel">
        
             <div className="panel-heading" className="panel-title">
-              <h3 className="panel-title"><strong>Airplane Schedule</strong></h3>
+              <h3 className="panel-title"><strong>Open Jobs</strong></h3>
             </div>
             <div className="panel-body">
             <table className="table table-hover" id="schedule-table">
             <thead>
                   <tr>
-                    <th>Plane Name</th>
-                    <th>Destination</th>
-                    <th>Frequency</th>
-                    <th>Next Arrvial</th>
-                    <th>Minutes Away</th>
+                    <th>Client Name</th>
+                    <th>Start Date</th>
+                    <th>Job Type</th>
+                    <th>Bid Amt($)</th>
+                    
+                    
+                 </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+
+
+            </div>
+          </div>
+
+          <div className="panel panel-primary" className="panel">
+       
+            <div className="panel-heading" className="panel-title">
+              <h3 className="panel-title"><strong>Closed Jobs</strong></h3>
+            </div>
+            <div className="panel-body">
+            <table className="table table-hover" id="schedule-table">
+            <thead>
+                  <tr>
+                    <th>Client Name</th>
+                    <th>Closed Date</th>
+                    <th>Job Type</th>
+                    <th>Bid Amt($)</th>
+                    <th>Invoice Amt Rec. ($)</th>
+                    <th></th>
                  </tr>
                 </thead>
                 <tbody>
