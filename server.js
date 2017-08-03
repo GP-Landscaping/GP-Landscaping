@@ -8,7 +8,7 @@ var superagent = require("superagent");
 var clientsController = require('./controllers/clients');
 var jobsController = require('./controllers/jobs')
 
-// Require History Schema
+
 var Clients = require("./models/Clients");
 var Jobs = require("./models/Jobs")
 

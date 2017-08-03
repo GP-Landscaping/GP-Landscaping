@@ -15,9 +15,8 @@ render: function() {
             </nav>
             <div class="container">
                 <div class="row">
-                <div class="col-md-6 col-md-offset-3">
                     <h1>GP-Landscaping</h1>
-                    <h2>Sign Up Form</h2>
+                    <h2>Sign-Up Form</h2>
                     <form class="signup">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
