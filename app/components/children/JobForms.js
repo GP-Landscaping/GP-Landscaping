@@ -33,10 +33,7 @@ getInitialState: function() {
             this.context.router.push("/billed");
                       
             // axios.post("/api/jobs", {
-            //     jobDate: this.date.value,
-            //     jobEnd: this.jobEnd.value,
-            //     jobType: this.type.value,
-            //     jobNotes: this.notes.value,
+                
 
 
             //     // userEmail: this.email.value,

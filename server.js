@@ -8,7 +8,7 @@ var superagent = require("superagent");
 var clientsController = require('./controllers/clients');
 var jobsController = require('./controllers/jobs')
 
-// Require History Schema
+
 var Clients = require("./models/Clients");
 var Jobs = require("./models/Jobs")
 
@@ -28,6 +28,9 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(express.static("public"));
 
 // -------------------------------------------------
+
+// mongoose.connect("mongodb://heroku_wvdq0t7m:thle5joaqosoqs3ce0tj67o6on@ds035674.mlab.com:35674/heroku_wvdq0t7m");
+
 
 // MongoDB Configuration configuration (Change this URL to your own DB)
 mongoose.connect("mongodb://localhost/gp-landscaping");
@@ -67,7 +70,7 @@ app.post('/api/jobs', function(req, res) {
    });
 
 
-app.get('/api/getClients', function(req, res) {
+app.get('/api/clients/', function(req, res) {
   clientsController.get(req.body, function(data) {
     res.json(data);
 

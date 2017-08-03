@@ -36,8 +36,6 @@ var JobsSchema = new Schema({
     type: Number
   }
   
-
-
 });
 
 var Jobs = mongoose.model("Jobs", JobsSchema);

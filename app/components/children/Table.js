@@ -10,6 +10,22 @@ var Link = require("react-router").Link;
 // Form is the main component. It includes the banner and form element
 var Table = React.createClass({
 
+  // getInitialState: function() {
+  // return {
+  //   // axios.get("/api/jobs", {
+  //   //           jobDate: localStorage.getItem("jobDate"),
+  //   //           jobEnd: localStorage.getItem("jobEnd"),
+  //   //           jobType: localStorage.getItem("jobType"),
+  //   //           jobNotes: localStorage.getItem("jobNotes"),              
+  //   //             jobEmployee: localStorage.getItem("jobEmployee"),
+  //   //             jobLabor: localStorage.getItem("jobLabor"),
+  //   //             jobCommute: localStorage.getItem("jobCommute"),
+  //   //             jobMaterials: localStorage.getItem("jobMaterials"),
+  //   //             jobCost: localStorage.getItem("jobCost"),
+    
+
+  // },
+
 	// handleSubmit: function(e) {console.log("table")
 	// .then(function(response) {            
  //                console.log(response);
