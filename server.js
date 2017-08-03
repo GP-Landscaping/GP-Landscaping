@@ -29,11 +29,11 @@ app.use(express.static("public"));
 
 // -------------------------------------------------
 
-// mongoose.connect("mongodb://heroku_wvdq0t7m:thle5joaqosoqs3ce0tj67o6on@ds035674.mlab.com:35674/heroku_wvdq0t7m");
+ mongoose.connect("mongodb://heroku_wvdq0t7m:thle5joaqosoqs3ce0tj67o6on@ds035674.mlab.com:35674/heroku_wvdq0t7m");
 
 
 // MongoDB Configuration configuration (Change this URL to your own DB)
-mongoose.connect("mongodb://localhost/gp-landscaping");
+// mongoose.connect("mongodb://localhost/gp-landscaping");
 var db = mongoose.connection;
 
 db.on("error", function(err) {
