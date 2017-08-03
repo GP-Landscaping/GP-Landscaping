@@ -1,4 +1,4 @@
-var Jobs = require("./models/Jobs");
+var Jobs = require("../models/Jobs");
 
 
 module.exports = {
