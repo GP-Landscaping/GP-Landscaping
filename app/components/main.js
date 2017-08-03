@@ -1,4 +1,3 @@
-// Include React
 import React from "react";
 import Form from "./children/Form";
 import JobForms from "./children/JobForms";
@@ -7,6 +6,7 @@ import Confirm from "./children/Confirm";
 
 import Login from "./children/Login";
 import Signup from "./children/Signup";
+import LandingPage from "./children/LandingPage";
 
 // import Clients from "./children/Clients"
 
@@ -14,7 +14,7 @@ import { Route, Link} from "react-router";
 var Header = require('./children/header.js');
 
 
-
+// import styles from "../public/assets/styles/forms.css"
 var helpers = require("./utils/helpers");
 // var myHeader = require("./children/myHeader.jsx");
 
@@ -38,16 +38,11 @@ console.log("submit");
           <Header/>
 
 
+
          
          {this.props.children}
 
 
-          <div className="col-md-6">
-
-          
-           
-            <Link to ="Clients" className="btn btn-success">New Client</Link>
-          </div>
 
 
 
@@ -61,6 +56,3 @@ console.log("submit");
 
 
 module.exports = Main;
-
-
-

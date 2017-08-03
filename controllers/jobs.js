@@ -13,7 +13,8 @@ module.exports = {
       labor: data._id,
       commute: data._id,
       materials: data._id,
-      cost: data._id
+      cost: data._id,
+      totCost: data._id,
 
     }, cb);
   },
@@ -31,7 +32,8 @@ module.exports = {
       labor: data.jobLabor,
       commute: data.jobCommute,
       materials: data.jobMaterials,
-      cost: data.jobCost
+      cost: data.jobCost,
+      totCost: data.totCost,
 
 
           };

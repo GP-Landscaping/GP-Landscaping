@@ -25,6 +25,7 @@ var Table = require("./components/children/Table");
 var Signup = require("./components/children/Signup")
 var Billed = require("./components/children/Billed")
 var Confirm = require("./components/children/Confirm")
+var LandingPage = require("./components/children/LandingPage")
 
 var Login = require("./components/children/Login");
 // var Signup = require("./components/children/Signup");
@@ -52,7 +53,7 @@ ReactDOM.render(<Router history={browserHistory}>
       <Route path="Signup" component={Signup} />
       <Route path="Info" component={Info} />
       {/* If user selects any other path... we get the Home Route */}
-      <IndexRoute component={Main} />
+      <IndexRoute component={LandingPage} />
 
     </Route>
   </Router>, document.getElementById('app'));

@@ -34,7 +34,18 @@ var JobsSchema = new Schema({
   },
   cost: {
     type: Number
-  }
+  },
+
+  totCost: {
+    type: Number
+  },
+
+  Clients: [{
+    
+    type: Schema.Types.ObjectId,
+
+    ref: "Clients"
+  }]
   
 });
 

@@ -23,6 +23,7 @@ handleSubmit: function(f) {
             localStorage.setItem("jobCommute", this.commute_time.value);
             localStorage.setItem("jobMaterials", this.materials_needed.value);
              localStorage.setItem("jobCost", this.materials_cost.value);
+             localStorage.setItem("totCost", this.totCost.value);
             
             this.context.router.push("/Confirm");
             // console.log("submit");           
@@ -43,8 +44,7 @@ handleSubmit: function(f) {
           console.log("check")
             return(
 
-                <div className="container">
-         <div className="row">
+                
           
                 <div>
                         {this.props.children}
@@ -62,6 +62,8 @@ handleSubmit: function(f) {
                                     <textArea type="text" name="city" placeholder="Materials" ref={(input) => { this.materials_needed= input; }}/>
                                     <label htmlFor="materialsCost">Est. Materials Cost ($): </label>
                                     <input type="text" name="zip" placeholder="" ref={(input) => { this.materials_cost= input; }}/>
+                                    <label htmlFor="materialsCost">Est. Tot. Cost ($): </label>
+                                    <input type="text" name="zip" placeholder="" ref={(input) => { this.totCost= input; }}/>
 
                                     <button className= "btn btn-success">Continue</button>
 
@@ -69,8 +71,7 @@ handleSubmit: function(f) {
                                 </form>
                             </div>
                         </div>
-                 </div>
-                 </div>
+                
             );
         }
 
