@@ -10,7 +10,7 @@ var jobsController = require('./controllers/jobs')
 
 
 var Clients = require("./models/Clients");
-var Jobs = require("./models/Jobs")
+var Jobs = require("./models/jobs")
 
 
 // Create Instance of Express
@@ -29,7 +29,7 @@ app.use(express.static("public"));
 
 // -------------------------------------------------
 
-// mongoose.connect("mongodb://heroku_wvdq0t7m:thle5joaqosoqs3ce0tj67o6on@ds035674.mlab.com:35674/heroku_wvdq0t7m");
+  // mongoose.connect("mongodb://admin:heroku_wvdq0t7m:thle5joaqosoqs3ce0tj67o6on@ds035674.mlab.com:35674/heroku_wvdq0t7m");
 
 
 // MongoDB Configuration configuration (Change this URL to your own DB)
@@ -76,6 +76,59 @@ app.get('/api/clients/', function(req, res) {
 
 
   });
+});
+
+
+
+app.post("/submit", function(req, res) {
+  clientsController.save(req.body, function(data) {
+    console.log("sdfadsdfsfd")
+
+
+  
+  // Use our Note model to make a new note from the req.body
+  var newJobs = new Jobs(req.body);
+  // Save the new note to mongoose
+  newJobs.save(function(error, doc) {
+    // Send any errors to the browser
+    if (error) {
+      res.send(error);
+    }
+    // Otherwise
+    else {
+      // Find our user and push the new note id into the User's notes array
+      Clients.findOneAndUpdate({}, { $push: { "Jobs": doc.name.data._id } }, { new: true }, function(err, newdoc) {
+        // Send any errors to the browser
+        if (err) {
+          res.send(err);
+        }
+        // Or send the newdoc to the browser
+        else {
+          res.send(newdoc);
+        }
+      });
+    }
+  });
+ });
+});
+
+
+app.get("/populatedclients", function(req, res) {
+  // Prepare a query to find all users..
+  Clients.find({})
+    // ..and on top of that, populate the notes (replace the objectIds in the notes array with bona-fide notes)
+    .populate("Jobs")
+    // Now, execute the query
+    .exec(function(error, doc) {
+      // Send any errors to the browser
+      if (error) {
+        res.send(error);
+      }
+      // Or send the doc to the browser
+      else {
+        res.send(doc);
+      }
+    });
 });
   // Here we'll save the location based on the JSON input.
   

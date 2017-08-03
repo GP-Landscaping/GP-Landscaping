@@ -1,4 +1,4 @@
-var Jobs = require("../models/Jobs");
+var Jobs = require("../models/jobs");
 
 
 module.exports = {
@@ -13,11 +13,12 @@ module.exports = {
       labor: data._id,
       commute: data._id,
       materials: data._id,
-      cost: data._id
+      cost: data._id,
+      totCost: data._id,
 
     }, cb);
   },
-  // Save a note
+  // Save 
   // Export this function as "save" (data = note info, cb = callback)
   save: function(data, cb) {
 
@@ -31,7 +32,8 @@ module.exports = {
       labor: data.jobLabor,
       commute: data.jobCommute,
       materials: data.jobMaterials,
-      cost: data.jobCost
+      cost: data.jobCost,
+      totCost: data.totCost,
 
 
           };

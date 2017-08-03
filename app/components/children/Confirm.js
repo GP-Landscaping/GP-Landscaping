@@ -28,6 +28,7 @@ console.log("asdad")
                 jobCommute: localStorage.getItem("jobCommute"),
                 jobMaterials: localStorage.getItem("jobMaterials"),
                 jobCost: localStorage.getItem("jobCost"),
+                totCost: localStorage.getItem("totCost")
                 
                 
 
@@ -54,13 +55,12 @@ render: function() {
 	var jobCommute=localStorage.getItem("jobCommute");
 	var jobMaterials=localStorage.getItem("jobMaterials");
 	var jobCost=localStorage.getItem("jobCost");
+  var totCost=localStorage.getItem("totCost");
   
 	
           
            return (
-      <div className="main-container">
-
-        <div className="row">
+      
           <div className="col-lg-12">
 
             <div className="panel panel-primary">
@@ -72,18 +72,28 @@ render: function() {
                 </h1>
               </div>
               <div className="panel-body">
-              <h2><strong>Client: </strong> {jobDate}</h2>
+              <h2><strong>Begin Date </strong> {jobDate}</h2>
               <hr></hr>
-              <h2><strong>Email: </strong> {jobEnd}</h2>
+              <h2><strong>Est. End Date: </strong> {jobEnd}</h2>
               <hr></hr>
-              <h2><strong>Address: </strong> {jobType}</h2>
+              <h2><strong>Job Type: </strong> {jobType}</h2>
               <hr></hr>
-              <h2><strong>City: </strong> {jobNotes}</h2>
+              <h2><strong># of Emp.: </strong> {jobEmployee}</h2>
               <hr></hr>
-              <h2><strong>Zip: </strong> {jobEmployee}</h2>
+              <h2><strong>Est. Labor: </strong> {jobLabor}</h2>
               <hr></hr>
-              <h2><strong>State: </strong> {jobLabor}</h2>
+              <h2><strong>Comm. Time (Min.): </strong> {jobCommute}</h2>
               <hr></hr>
+              <h2><strong>Materials: </strong> {jobMaterials}</h2>
+              <hr></hr>
+              <h2><strong>Materials Cost ($):</strong> {jobCost}</h2>
+              <hr></hr>
+              <h2><strong>Est. Total Cost ($):</strong> {totCost} </h2>
+              <hr></hr>
+              <h2><strong>Job Notes: </strong> {jobNotes} </h2>
+              <hr></hr>
+              
+              
 
                 {/* Note how we associate the text-box inputs with the state values */}
                 
@@ -100,8 +110,7 @@ render: function() {
             </div>
 
           </div>
-        </div>
-      </div>
+     
     );
   }
 });

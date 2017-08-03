@@ -29,7 +29,7 @@ render: function() {
                     <button type="submit" class="btn btn-default">Sign Up</button>
                     </form>
                     <br />
-                    <p>Or log in <a href="/login">here</a></p>
+                    <p>Or log-in <a href="/login">here</a></p>
                 </div>
                 </div>
             </div>

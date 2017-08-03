@@ -3,7 +3,14 @@ var axios = require("axios");
 var Link = require("react-router").Link;
 
 var Login = React.createClass({
+     
+         contextTypes: {
+         router: React.PropTypes.func
+    },     
 
+    handleSubmit: function(e) {
+          this.context.router.push("/Main");
+      },
 
 
 
@@ -20,9 +27,10 @@ render: function() {
                 <div className="container">
                     <div className="row">
                     <div className="col-md-6 col-md-offset-3">
+                    
                         <h1>G.P. Landscaping</h1>
                         <h2>Login Form</h2>
-                        <form className="login">
+                        <form className="login" onSubmit={this.handleSubmit}>
                         <div className="form-group">
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email" className="form-control" id="email-input" placeholder="Email"/>
@@ -32,7 +40,7 @@ render: function() {
                             <input type="password" className="form-control" id="password-input" placeholder="Password"/>
                         </div>
                         
-                       <Link to ="Main"> <button type="submit" className="btn btn-default">Login</button></Link>
+                       <Link to ="Main"> <button className="btn btn-default">Login</button></Link>
                         </form>
                         <br />
                         <p><strong>New User? Please Sign Up</strong></p> <Link to ="Signup"><button className= "btn btn-success">Sign Up</button></Link>

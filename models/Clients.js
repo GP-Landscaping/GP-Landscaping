@@ -23,6 +23,11 @@ var ClientsSchema = new Schema({
   state: {
               type: String,
           },
+  Jobs: [{
+    type: Schema.Types.ObjectId,
+
+    ref: "Jobs"
+  }]
   // createdAt: {
   //   type: Date,
   //   default: Date.now
